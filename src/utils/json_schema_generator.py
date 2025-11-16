@@ -2,7 +2,7 @@ import re
 import os
 import json
 from typing import Any
-
+from src.utils.json_formatted_schema import JsonFormattedSchema
 
 class JsonSchemaGenerator:
 
@@ -117,6 +117,7 @@ class JsonSchemaGenerator:
                 r"CREATE\s+(?:OR\s+REPLACE\s+)?MATERIALIZED\s+VIEW",
                 sql_content, re.IGNORECASE
             ) else "view"
+
             return {
                 "type": view_type,
                 "name": view_name,
@@ -125,11 +126,27 @@ class JsonSchemaGenerator:
 
         return None
 
-    def generate_schema_file(self, folder_path: str, output_folder: str):
+    def generate_schema_file(self, folder_path: str, output_folder: str) -> list[JsonFormattedSchema]:
         """
         Generates the JSON schema file for all sql files within the given folder.
+
+        Table:
+        {
+            "type": "table",
+            "name": table_name,
+            "columns": columns,
+            "relationships": relationships
+        }
+
+        View:
+        {
+            "type": view_type,
+            "name": view_name,
+            "query": query
+        }
         """
         os.makedirs(output_folder, exist_ok=True)
+        json_schemas = []
 
         for filename in os.listdir(folder_path):
             if filename.lower().endswith(".sql"):
@@ -137,4 +154,10 @@ class JsonSchemaGenerator:
                 with open(filepath, "r", encoding="utf-8") as f:
                     sql_content = f.read()
                     json_result = self.__parse_to_json__(sql_content)
-                    self.__save_json__(json_result, output_folder)
+
+                    if json_result:
+                        self.__save_json__(json_result, output_folder)
+                        model = JsonFormattedSchema(json_result["type"], json_result, sql_content)
+                        json_schemas.append(model)
+
+        return json_schemas
