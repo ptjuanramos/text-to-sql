@@ -1,8 +1,8 @@
 import os
-from typing import Dict
+from typing import Dict, Any
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
-from azure.search.documents._generated.models import IndexingResult
+from azure.search.documents._generated.models import IndexingResult, VectorQuery, VectorizedQuery
 from azure.search.documents.indexes import SearchIndexClient
 from azure.search.documents.indexes.models import (
     SearchIndex,
@@ -14,6 +14,8 @@ from azure.search.documents.indexes.models import (
     SearchField,
     SearchFieldDataType
 )
+
+from src.common.embeddings_generator import EmbeddingGenerator
 
 INDEX_NAME = "schema-index"
 VECTOR_DIM = 1536  # text-embedding-3-small
@@ -31,6 +33,33 @@ class TextToSqlAISearch:
             index_name=INDEX_NAME,
             credential=AzureKeyCredential(os.getenv("AZURE_SEARCH_KEY"))
         )
+
+    def hybrid_search(self, text: str) -> list[Any]:
+        #embedding_generator = EmbeddingGenerator()
+        #input_embed = embedding_generator.embed(text)
+
+        results = self.search_client.search(
+            search_text=text,
+            # TODO: Needs more research - score, filter, semantics, improve embeddings.
+            # vector_queries=[VectorizedQuery(
+            #     vector=input_embed,
+            #     fields="embedding"
+            # )]
+        )
+
+        filtered = []
+        for r in results:
+            score = r.get("@search.score", 0)
+            filtered.append({
+                "id": r["id"],
+                "name": r.get("name"),
+                "type": r.get("type"),
+                "schema_text": r.get("schema_text"),
+                "score": score
+            })
+
+        return filtered
+
 
     def create_index_if_not_exists(self):
         existing_indexes = list(self.index_client.list_index_names())

@@ -2,7 +2,7 @@ import re
 import os
 import json
 from typing import Any
-from src.utils.json_formatted_schema import JsonFormattedSchema
+from src.embeddings.utils.json_formatted_schema import JsonFormattedSchema
 
 class JsonSchemaGenerator:
 

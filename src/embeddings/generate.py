@@ -1,10 +1,8 @@
-import os
-
 from dotenv import load_dotenv
 
-from src.utils.json_schema_generator import JsonSchemaGenerator
-from src.utils.embeddings_generator import EmbeddingGenerator
-from src.utils.text_to_sql_ai_search import TextToSqlAISearch
+from src.embeddings.utils.json_schema_generator import JsonSchemaGenerator
+from src.common.embeddings_generator import EmbeddingGenerator
+from src.common.text_to_sql_ai_search import TextToSqlAISearch
 
 load_dotenv()
 
@@ -12,8 +10,8 @@ json_schema_generator = JsonSchemaGenerator()
 embedding_generator = EmbeddingGenerator()
 
 if __name__ == "__main__":
-    folder_path = "../schema/sql/tables"
-    output_path = "../schema/json/tables"
+    folder_path = "../../schema/sql/tables"
+    output_path = "../../schema/json/tables"
     json_schemas = json_schema_generator.generate_schema_file(folder_path, output_path)
 
     docs = []
@@ -26,7 +24,7 @@ if __name__ == "__main__":
             "id": json_schema.schema_json["name"],
             "type": json_schema.schema_type,
             "name": json_schema.schema_json["name"],
-            "schema_text": json_schema.get_schema_text(),
+            "schema_text": json_schema.get_schema_toon(),
             "embedding": json_schema.get_json_schema_embed()
         }
 

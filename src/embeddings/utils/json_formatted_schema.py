@@ -1,6 +1,7 @@
 import json
 from typing import Any
-from src.utils.embeddings_generator import EmbeddingGenerator
+from toon import encode
+from src.common.embeddings_generator import EmbeddingGenerator
 
 class JsonFormattedSchema:
 
@@ -12,7 +13,10 @@ class JsonFormattedSchema:
     def get_json_schema_embed(self):
         embedding_generator = EmbeddingGenerator()
         json_schema_str = json.dumps(self.schema_json)
-        return embedding_generator.embed_single_schema(json_schema_str)
+        return embedding_generator.embed(json_schema_str)
+
+    def get_schema_toon(self) -> str:
+        return encode(self.schema_json)
 
     def get_schema_text(self) -> str:
         schema_type = self.schema_json.get("type", "unknown")

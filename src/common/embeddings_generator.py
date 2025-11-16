@@ -11,9 +11,9 @@ class EmbeddingGenerator:
             api_version="2024-02-01"
         )
 
-    def embed_single_schema(self, schema_text: str) -> List[float]:
+    def embed(self, text: str) -> List[float]:
         response = self.client.embeddings.create(
             model="text-embedding-3-small",
-            input=schema_text
+            input=text
         )
         return response.data[0].embedding
