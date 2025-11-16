@@ -1,0 +1,31 @@
+{
+    "type": "table",
+    "name": "channels",
+    "columns": [
+        {
+            "name": "channel_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "channel_desc",
+            "type": "VARCHAR2(20)"
+        },
+        {
+            "name": "channel_class",
+            "type": "VARCHAR2(20)"
+        },
+        {
+            "name": "channel_class_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "channel_total",
+            "type": "VARCHAR2(13)"
+        },
+        {
+            "name": "channel_total_id",
+            "type": "NUMBER"
+        }
+    ],
+    "relationships": []
+}

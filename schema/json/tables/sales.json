@@ -1,0 +1,35 @@
+{
+    "type": "table",
+    "name": "sales",
+    "columns": [
+        {
+            "name": "prod_id",
+            "type": "NUMBER(6)"
+        },
+        {
+            "name": "cust_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "time_id",
+            "type": "DATE"
+        },
+        {
+            "name": "channel_id",
+            "type": "NUMBER(1)"
+        },
+        {
+            "name": "promo_id",
+            "type": "NUMBER(6)"
+        },
+        {
+            "name": "quantity_sold",
+            "type": "NUMBER(3)"
+        },
+        {
+            "name": "amount_sold",
+            "type": "NUMBER(10,2)"
+        }
+    ],
+    "relationships": []
+}

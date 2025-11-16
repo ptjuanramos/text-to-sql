@@ -1,0 +1,51 @@
+{
+    "type": "table",
+    "name": "promotions",
+    "columns": [
+        {
+            "name": "promo_id",
+            "type": "NUMBER(6)"
+        },
+        {
+            "name": "promo_name",
+            "type": "VARCHAR2(30)"
+        },
+        {
+            "name": "promo_subcategory",
+            "type": "VARCHAR2(30)"
+        },
+        {
+            "name": "promo_subcategory_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "promo_category",
+            "type": "VARCHAR2(30)"
+        },
+        {
+            "name": "promo_category_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "promo_cost",
+            "type": "NUMBER(10,2)"
+        },
+        {
+            "name": "promo_begin_date",
+            "type": "DATE"
+        },
+        {
+            "name": "promo_end_date",
+            "type": "DATE"
+        },
+        {
+            "name": "promo_total",
+            "type": "VARCHAR2(15)"
+        },
+        {
+            "name": "promo_total_id",
+            "type": "NUMBER"
+        }
+    ],
+    "relationships": []
+}

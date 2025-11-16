@@ -1,0 +1,159 @@
+{
+    "type": "table",
+    "name": "times",
+    "columns": [
+        {
+            "name": "time_id",
+            "type": "DATE"
+        },
+        {
+            "name": "day_name",
+            "type": "VARCHAR2(9)"
+        },
+        {
+            "name": "day_number_in_week",
+            "type": "NUMBER(1)"
+        },
+        {
+            "name": "day_number_in_month",
+            "type": "NUMBER(2)"
+        },
+        {
+            "name": "calendar_week_number",
+            "type": "NUMBER(2)"
+        },
+        {
+            "name": "fiscal_week_number",
+            "type": "NUMBER(2)"
+        },
+        {
+            "name": "week_ending_day",
+            "type": "DATE"
+        },
+        {
+            "name": "week_ending_day_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "calendar_month_number",
+            "type": "NUMBER(2)"
+        },
+        {
+            "name": "fiscal_month_number",
+            "type": "NUMBER(2)"
+        },
+        {
+            "name": "calendar_month_desc",
+            "type": "VARCHAR2(8)"
+        },
+        {
+            "name": "calendar_month_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "fiscal_month_desc",
+            "type": "VARCHAR2(8)"
+        },
+        {
+            "name": "fiscal_month_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "days_in_cal_month",
+            "type": "NUMBER"
+        },
+        {
+            "name": "days_in_fis_month",
+            "type": "NUMBER"
+        },
+        {
+            "name": "end_of_cal_month",
+            "type": "DATE"
+        },
+        {
+            "name": "end_of_fis_month",
+            "type": "DATE"
+        },
+        {
+            "name": "calendar_month_name",
+            "type": "VARCHAR2(9)"
+        },
+        {
+            "name": "fiscal_month_name",
+            "type": "VARCHAR2(9)"
+        },
+        {
+            "name": "calendar_quarter_desc",
+            "type": "CHAR(7)"
+        },
+        {
+            "name": "calendar_quarter_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "fiscal_quarter_desc",
+            "type": "CHAR(7)"
+        },
+        {
+            "name": "fiscal_quarter_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "days_in_cal_quarter",
+            "type": "NUMBER"
+        },
+        {
+            "name": "days_in_fis_quarter",
+            "type": "NUMBER"
+        },
+        {
+            "name": "end_of_cal_quarter",
+            "type": "DATE"
+        },
+        {
+            "name": "end_of_fis_quarter",
+            "type": "DATE"
+        },
+        {
+            "name": "calendar_quarter_number",
+            "type": "NUMBER(1)"
+        },
+        {
+            "name": "fiscal_quarter_number",
+            "type": "NUMBER(1)"
+        },
+        {
+            "name": "calendar_year",
+            "type": "NUMBER(4)"
+        },
+        {
+            "name": "calendar_year_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "fiscal_year",
+            "type": "NUMBER(4)"
+        },
+        {
+            "name": "fiscal_year_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "days_in_cal_year",
+            "type": "NUMBER"
+        },
+        {
+            "name": "days_in_fis_year",
+            "type": "NUMBER"
+        },
+        {
+            "name": "end_of_cal_year",
+            "type": "DATE"
+        },
+        {
+            "name": "end_of_fis_year",
+            "type": "DATE"
+        }
+    ],
+    "relationships": []
+}

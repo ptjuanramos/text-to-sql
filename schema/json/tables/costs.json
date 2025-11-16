@@ -1,0 +1,31 @@
+{
+    "type": "table",
+    "name": "costs",
+    "columns": [
+        {
+            "name": "prod_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "time_id",
+            "type": "DATE"
+        },
+        {
+            "name": "promo_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "channel_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "unit_cost",
+            "type": "NUMBER(10,2)"
+        },
+        {
+            "name": "unit_price",
+            "type": "NUMBER(10,2)"
+        }
+    ],
+    "relationships": []
+}

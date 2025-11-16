@@ -1,0 +1,99 @@
+{
+    "type": "table",
+    "name": "customers",
+    "columns": [
+        {
+            "name": "cust_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "cust_first_name",
+            "type": "VARCHAR2(20)"
+        },
+        {
+            "name": "cust_last_name",
+            "type": "VARCHAR2(40)"
+        },
+        {
+            "name": "cust_gender",
+            "type": "CHAR(1)"
+        },
+        {
+            "name": "cust_year_of_birth",
+            "type": "NUMBER(4)"
+        },
+        {
+            "name": "cust_marital_status",
+            "type": "VARCHAR2(20)"
+        },
+        {
+            "name": "cust_street_address",
+            "type": "VARCHAR2(40)"
+        },
+        {
+            "name": "cust_postal_code",
+            "type": "VARCHAR2(10)"
+        },
+        {
+            "name": "cust_city",
+            "type": "VARCHAR2(30)"
+        },
+        {
+            "name": "cust_city_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "cust_state_province",
+            "type": "VARCHAR2(40)"
+        },
+        {
+            "name": "cust_state_province_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "country_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "cust_main_phone_number",
+            "type": "VARCHAR2(25)"
+        },
+        {
+            "name": "cust_income_level",
+            "type": "VARCHAR2(30)"
+        },
+        {
+            "name": "cust_credit_limit",
+            "type": "NUMBER"
+        },
+        {
+            "name": "cust_email",
+            "type": "VARCHAR2(50)"
+        },
+        {
+            "name": "cust_total",
+            "type": "VARCHAR2(14)"
+        },
+        {
+            "name": "cust_total_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "cust_src_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "cust_eff_from",
+            "type": "DATE"
+        },
+        {
+            "name": "cust_eff_to",
+            "type": "DATE"
+        },
+        {
+            "name": "cust_valid",
+            "type": "VARCHAR2(1)"
+        }
+    ],
+    "relationships": []
+}

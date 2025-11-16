@@ -1,0 +1,63 @@
+{
+    "type": "table",
+    "name": "supplementary_demographics",
+    "columns": [
+        {
+            "name": "cust_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "education",
+            "type": "VARCHAR2(21)"
+        },
+        {
+            "name": "occupation",
+            "type": "VARCHAR2(21)"
+        },
+        {
+            "name": "household_size",
+            "type": "VARCHAR2(21)"
+        },
+        {
+            "name": "yrs_residence",
+            "type": "NUMBER"
+        },
+        {
+            "name": "affinity_card",
+            "type": "NUMBER(10)"
+        },
+        {
+            "name": "cricket",
+            "type": "NUMBER(10)"
+        },
+        {
+            "name": "baseball",
+            "type": "NUMBER(10)"
+        },
+        {
+            "name": "tennis",
+            "type": "NUMBER(10)"
+        },
+        {
+            "name": "soccer",
+            "type": "NUMBER(10)"
+        },
+        {
+            "name": "golf",
+            "type": "NUMBER(10)"
+        },
+        {
+            "name": "unknown",
+            "type": "NUMBER(10)"
+        },
+        {
+            "name": "misc",
+            "type": "NUMBER(10)"
+        },
+        {
+            "name": "comments",
+            "type": "VARCHAR2(4000)"
+        }
+    ],
+    "relationships": []
+}

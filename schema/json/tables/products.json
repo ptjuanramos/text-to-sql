@@ -1,0 +1,95 @@
+{
+    "type": "table",
+    "name": "products",
+    "columns": [
+        {
+            "name": "prod_id",
+            "type": "NUMBER(6)"
+        },
+        {
+            "name": "prod_name",
+            "type": "VARCHAR2(50)"
+        },
+        {
+            "name": "prod_desc",
+            "type": "VARCHAR2(4000)"
+        },
+        {
+            "name": "prod_subcategory",
+            "type": "VARCHAR2(50)"
+        },
+        {
+            "name": "prod_subcategory_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "prod_subcategory_desc",
+            "type": "VARCHAR2(2000)"
+        },
+        {
+            "name": "prod_category",
+            "type": "VARCHAR2(50)"
+        },
+        {
+            "name": "prod_category_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "prod_category_desc",
+            "type": "VARCHAR2(2000)"
+        },
+        {
+            "name": "prod_weight_class",
+            "type": "NUMBER(3)"
+        },
+        {
+            "name": "prod_unit_of_measure",
+            "type": "VARCHAR2(20)"
+        },
+        {
+            "name": "prod_pack_size",
+            "type": "VARCHAR2(30)"
+        },
+        {
+            "name": "supplier_id",
+            "type": "NUMBER(6)"
+        },
+        {
+            "name": "prod_status",
+            "type": "VARCHAR2(20)"
+        },
+        {
+            "name": "prod_list_price",
+            "type": "NUMBER(8,2)"
+        },
+        {
+            "name": "prod_min_price",
+            "type": "NUMBER(8,2)"
+        },
+        {
+            "name": "prod_total",
+            "type": "VARCHAR2(13)"
+        },
+        {
+            "name": "prod_total_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "prod_src_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "prod_eff_from",
+            "type": "DATE"
+        },
+        {
+            "name": "prod_eff_to",
+            "type": "DATE"
+        },
+        {
+            "name": "prod_valid",
+            "type": "VARCHAR2(1)"
+        }
+    ],
+    "relationships": []
+}

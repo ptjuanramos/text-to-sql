@@ -1,0 +1,43 @@
+{
+    "type": "table",
+    "name": "countries",
+    "columns": [
+        {
+            "name": "country_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "country_iso_code",
+            "type": "CHAR(2)"
+        },
+        {
+            "name": "country_name",
+            "type": "VARCHAR2(40)"
+        },
+        {
+            "name": "country_subregion",
+            "type": "VARCHAR2(30)"
+        },
+        {
+            "name": "country_subregion_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "country_region",
+            "type": "VARCHAR2(20)"
+        },
+        {
+            "name": "country_region_id",
+            "type": "NUMBER"
+        },
+        {
+            "name": "country_total",
+            "type": "VARCHAR2(11)"
+        },
+        {
+            "name": "country_total_id",
+            "type": "NUMBER"
+        }
+    ],
+    "relationships": []
+}
