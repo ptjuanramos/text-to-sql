@@ -20,4 +20,4 @@ def get_query(input_text: str):
 
 if __name__ == "__main__":
     text = " ".join(sys.argv[1:])
-    get_query("List all customers")
+    get_query("List all costs, profits per product and customer")
