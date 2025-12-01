@@ -2,7 +2,7 @@ import os
 from typing import Dict, Any
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
-from azure.search.documents._generated.models import IndexingResult, VectorQuery, VectorizedQuery
+from azure.search.documents._generated.models import IndexingResult
 from azure.search.documents.indexes import SearchIndexClient
 from azure.search.documents.indexes.models import (
     SearchIndex,
@@ -14,8 +14,6 @@ from azure.search.documents.indexes.models import (
     SearchField,
     SearchFieldDataType
 )
-
-from src.common.embeddings_generator import EmbeddingGenerator
 
 INDEX_NAME = "schema-index"
 VECTOR_DIM = 1536  # text-embedding-3-small
