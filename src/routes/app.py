@@ -1,11 +1,9 @@
-import os
 import re
-import pyodbc
-from flask import Flask, Blueprint, request, jsonify, render_template
-from dotenv import load_dotenv
-from azure.identity import ClientSecretCredential
-from openai import AzureOpenAI
 
+from flask import Blueprint, request, jsonify, render_template
+from dotenv import load_dotenv
+
+from src.services.database.database_service import DatabaseService
 from src.services.rag.rag_engine import RagEngine
 
 # --- Load environment variables ---
@@ -19,6 +17,11 @@ app = Blueprint("main", __name__)
 def home():
     return render_template("index.html")
 
+def clean_sql(sql: str) -> str:
+    """Remove markdown / code blocks"""
+    sql = re.sub(r"```(?:sql)?\n?(.*?)```", r"\1", sql, flags=re.DOTALL)
+    return sql.strip()
+
 @app.route("/query", methods=["POST"])
 def query():
     user_question = request.json.get("question")
@@ -26,18 +29,12 @@ def query():
         return jsonify({"error": "No question provided"}), 400
 
     rag_engine = RagEngine()
-    sql = rag_engine.get_query(user_question)
+    query = rag_engine.get_query(user_question)
 
     try:
-        # conn = get_db_connection()
-        # cursor = conn.cursor()
-        # cursor.execute(sql)
-        # rows = cursor.fetchall()
-        # columns = [column[0] for column in cursor.description]
-        # result = [dict(zip(columns, row)) for row in rows]
-        # conn.close()
-        result = []
-        return jsonify({"sql": sql, "result": result})
+        database_service = DatabaseService()
+        result = database_service.execute_query(query)
+        return jsonify({"sql": query, "result": result})
 
     except Exception as e:
-        return jsonify({"error": str(e), "sql": sql}), 400
+        return jsonify({"error": str(e), "sql": query}), 400
