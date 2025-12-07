@@ -1,0 +1,31 @@
+{
+  "type": null,
+  "name": "dbo.investors",
+  "query": null,
+  "columns": [
+    {
+      "name": "investor_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "investor_name",
+      "type": "varchar",
+      "nullable": "YES"
+    },
+    {
+      "name": "investor_type",
+      "type": "varchar",
+      "nullable": "YES"
+    },
+    {
+      "name": "email",
+      "type": "varchar",
+      "nullable": "YES"
+    }
+  ],
+  "primary_keys": [
+    "investor_id"
+  ],
+  "relationships": []
+}

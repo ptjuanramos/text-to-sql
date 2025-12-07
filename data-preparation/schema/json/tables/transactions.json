@@ -1,0 +1,52 @@
+{
+  "type": null,
+  "name": "dbo.transactions",
+  "query": null,
+  "columns": [
+    {
+      "name": "transaction_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "fund_id",
+      "type": "int",
+      "nullable": "YES"
+    },
+    {
+      "name": "investor_id",
+      "type": "int",
+      "nullable": "YES"
+    },
+    {
+      "name": "transaction_date",
+      "type": "date",
+      "nullable": "YES"
+    },
+    {
+      "name": "transaction_type",
+      "type": "varchar",
+      "nullable": "YES"
+    },
+    {
+      "name": "amount",
+      "type": "decimal",
+      "nullable": "YES"
+    }
+  ],
+  "primary_keys": [
+    "transaction_id"
+  ],
+  "relationships": [
+    {
+      "fk_column": "fund_id",
+      "ref_table": "dbo.mutual_funds",
+      "ref_column": "fund_id"
+    },
+    {
+      "fk_column": "investor_id",
+      "ref_table": "dbo.investors",
+      "ref_column": "investor_id"
+    }
+  ]
+}

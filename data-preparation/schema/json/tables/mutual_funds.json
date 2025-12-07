@@ -1,0 +1,32 @@
+{
+  "type": null,
+  "name": "dbo.mutual_funds",
+  "query": null,
+  "columns": [
+    {
+      "name": "fund_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "fund_name",
+      "type": "varchar",
+      "nullable": "YES"
+    },
+    {
+      "name": "category_id",
+      "type": "int",
+      "nullable": "YES"
+    }
+  ],
+  "primary_keys": [
+    "fund_id"
+  ],
+  "relationships": [
+    {
+      "fk_column": "category_id",
+      "ref_table": "dbo.fund_categories",
+      "ref_column": "category_id"
+    }
+  ]
+}

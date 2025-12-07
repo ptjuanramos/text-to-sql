@@ -1,0 +1,39 @@
+{
+  "type": null,
+  "name": "sys.database_firewall_rules",
+  "query": "CREATE VIEW sys.database_firewall_rules AS SELECT id, name, start_ip_address, end_ip_address, create_date, modify_date FROM sys.database_firewall_rules_table",
+  "columns": [
+    {
+      "name": "id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "name",
+      "type": "nvarchar",
+      "nullable": "NO"
+    },
+    {
+      "name": "start_ip_address",
+      "type": "varchar",
+      "nullable": "NO"
+    },
+    {
+      "name": "end_ip_address",
+      "type": "varchar",
+      "nullable": "NO"
+    },
+    {
+      "name": "create_date",
+      "type": "datetime",
+      "nullable": "NO"
+    },
+    {
+      "name": "modify_date",
+      "type": "datetime",
+      "nullable": "NO"
+    }
+  ],
+  "primary_keys": [],
+  "relationships": []
+}

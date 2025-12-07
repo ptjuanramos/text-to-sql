@@ -1,0 +1,47 @@
+{
+  "type": null,
+  "name": "dbo.reporting",
+  "query": null,
+  "columns": [
+    {
+      "name": "report_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "fund_id",
+      "type": "int",
+      "nullable": "YES"
+    },
+    {
+      "name": "report_type",
+      "type": "varchar",
+      "nullable": "YES"
+    },
+    {
+      "name": "generated_date",
+      "type": "date",
+      "nullable": "YES"
+    },
+    {
+      "name": "sent_date",
+      "type": "date",
+      "nullable": "YES"
+    },
+    {
+      "name": "status",
+      "type": "varchar",
+      "nullable": "YES"
+    }
+  ],
+  "primary_keys": [
+    "report_id"
+  ],
+  "relationships": [
+    {
+      "fk_column": "fund_id",
+      "ref_table": "dbo.mutual_funds",
+      "ref_column": "fund_id"
+    }
+  ]
+}

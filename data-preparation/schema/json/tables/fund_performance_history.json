@@ -1,0 +1,53 @@
+{
+  "type": null,
+  "name": "dbo.fund_performance_history",
+  "query": null,
+  "columns": [
+    {
+      "name": "fund_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "as_of_date",
+      "type": "date",
+      "nullable": "NO"
+    },
+    {
+      "name": "nav",
+      "type": "decimal",
+      "nullable": "YES"
+    },
+    {
+      "name": "returns_1m",
+      "type": "decimal",
+      "nullable": "YES"
+    },
+    {
+      "name": "returns_3m",
+      "type": "decimal",
+      "nullable": "YES"
+    },
+    {
+      "name": "returns_1y",
+      "type": "decimal",
+      "nullable": "YES"
+    },
+    {
+      "name": "sharpe_ratio",
+      "type": "decimal",
+      "nullable": "YES"
+    }
+  ],
+  "primary_keys": [
+    "fund_id",
+    "as_of_date"
+  ],
+  "relationships": [
+    {
+      "fk_column": "fund_id",
+      "ref_table": "dbo.mutual_funds",
+      "ref_column": "fund_id"
+    }
+  ]
+}

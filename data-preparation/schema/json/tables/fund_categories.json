@@ -1,0 +1,21 @@
+{
+  "type": null,
+  "name": "dbo.fund_categories",
+  "query": null,
+  "columns": [
+    {
+      "name": "category_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "category_name",
+      "type": "varchar",
+      "nullable": "NO"
+    }
+  ],
+  "primary_keys": [
+    "category_id"
+  ],
+  "relationships": []
+}

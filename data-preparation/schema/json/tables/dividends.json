@@ -1,0 +1,47 @@
+{
+  "type": null,
+  "name": "dbo.dividends",
+  "query": null,
+  "columns": [
+    {
+      "name": "dividend_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "fund_id",
+      "type": "int",
+      "nullable": "YES"
+    },
+    {
+      "name": "declaration_date",
+      "type": "date",
+      "nullable": "YES"
+    },
+    {
+      "name": "ex_date",
+      "type": "date",
+      "nullable": "YES"
+    },
+    {
+      "name": "record_date",
+      "type": "date",
+      "nullable": "YES"
+    },
+    {
+      "name": "dividend_amount",
+      "type": "decimal",
+      "nullable": "YES"
+    }
+  ],
+  "primary_keys": [
+    "dividend_id"
+  ],
+  "relationships": [
+    {
+      "fk_column": "fund_id",
+      "ref_table": "dbo.mutual_funds",
+      "ref_column": "fund_id"
+    }
+  ]
+}

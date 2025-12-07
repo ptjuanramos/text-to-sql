@@ -1,0 +1,42 @@
+{
+  "type": null,
+  "name": "dbo.corporate_actions",
+  "query": null,
+  "columns": [
+    {
+      "name": "action_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "fund_id",
+      "type": "int",
+      "nullable": "YES"
+    },
+    {
+      "name": "action_type",
+      "type": "varchar",
+      "nullable": "YES"
+    },
+    {
+      "name": "action_date",
+      "type": "date",
+      "nullable": "YES"
+    },
+    {
+      "name": "details",
+      "type": "varchar",
+      "nullable": "YES"
+    }
+  ],
+  "primary_keys": [
+    "action_id"
+  ],
+  "relationships": [
+    {
+      "fk_column": "fund_id",
+      "ref_table": "dbo.mutual_funds",
+      "ref_column": "fund_id"
+    }
+  ]
+}

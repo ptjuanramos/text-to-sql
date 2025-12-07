@@ -1,0 +1,31 @@
+{
+  "type": null,
+  "name": "dbo.benchmark_indices",
+  "query": null,
+  "columns": [
+    {
+      "name": "index_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "index_name",
+      "type": "varchar",
+      "nullable": "YES"
+    },
+    {
+      "name": "as_of_date",
+      "type": "date",
+      "nullable": "YES"
+    },
+    {
+      "name": "value",
+      "type": "decimal",
+      "nullable": "YES"
+    }
+  ],
+  "primary_keys": [
+    "index_id"
+  ],
+  "relationships": []
+}

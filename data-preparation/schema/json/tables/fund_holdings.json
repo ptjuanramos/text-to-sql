@@ -1,0 +1,44 @@
+{
+  "type": null,
+  "name": "dbo.fund_holdings",
+  "query": null,
+  "columns": [
+    {
+      "name": "fund_id",
+      "type": "int",
+      "nullable": "NO"
+    },
+    {
+      "name": "holding_name",
+      "type": "varchar",
+      "nullable": "NO"
+    },
+    {
+      "name": "holding_type",
+      "type": "varchar",
+      "nullable": "YES"
+    },
+    {
+      "name": "holding_value",
+      "type": "decimal",
+      "nullable": "YES"
+    },
+    {
+      "name": "as_of_date",
+      "type": "date",
+      "nullable": "NO"
+    }
+  ],
+  "primary_keys": [
+    "fund_id",
+    "holding_name",
+    "as_of_date"
+  ],
+  "relationships": [
+    {
+      "fk_column": "fund_id",
+      "ref_table": "dbo.mutual_funds",
+      "ref_column": "fund_id"
+    }
+  ]
+}
