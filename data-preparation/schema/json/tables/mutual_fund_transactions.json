@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "VIEW",
   "name": "dbo.mutual_fund_transactions",
+  "keywords": "mutual mutuals fund funds transaction transactions",
   "query": "CREATE VIEW dbo.mutual_fund_transactions AS SELECT     mf.fund_id,     mf.fund_name,     t.transaction_id,     t.transaction_date,     t.amount,     t.transaction_type FROM dbo.mutual_funds AS mf INNER JOIN dbo.transactions AS t     ON mf.fund_id = t.fund_id;",
   "columns": [
     {

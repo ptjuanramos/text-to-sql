@@ -157,7 +157,7 @@ class JsonSchemaGenerator:
 
                     if json_result:
                         self.__save_json__(json_result, output_folder)
-                        model = JsonFormattedSchema(json_result["type"], json_result, sql_content)
+                        model = JsonFormattedSchema(json_result["type"], json_result)
                         json_schemas.append(model)
 
         return json_schemas

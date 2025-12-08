@@ -1,5 +1,6 @@
 import os
 import pyodbc
+import inflect
 from dotenv import load_dotenv
 from collections import defaultdict
 import json
@@ -11,6 +12,32 @@ DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 DB_PORT = os.getenv("DB_PORT", "1433")
+
+
+def get_related_table_name_words(table_name: str) -> str:
+    p = inflect.engine()
+
+    cleaned = (
+        table_name.replace("dbo.", "")
+        .replace("_", " ")
+        .replace(".", " ")
+    )
+
+    words = cleaned.split()
+    result_words = []
+
+    for w in words:
+        singular = p.singular_noun(w)
+
+        if singular is False:
+            singular = w
+            plural = p.plural_noun(w)
+        else:
+            plural = w
+
+        result_words.extend([singular, plural])
+
+    return " ".join(result_words)
 
 conn_str = (
     f"DRIVER={{ODBC Driver 18 for SQL Server}};"
@@ -114,6 +141,7 @@ db_connection.close()
 tables = defaultdict(lambda: {
     "type": None,
     "name": None,
+    "keywords": None,
     "query": None,
     "columns": [],
     "primary_keys": [],
@@ -127,6 +155,8 @@ for row in result:
     # TABLE / VIEW / OTHER TYPE
     sql_type = "TABLE" if row["TABLE_TYPE"] == "BASE TABLE" else row["TABLE_TYPE"]
     table["name"] = table_full_name
+    table["keywords"] = get_related_table_name_words(table_full_name)
+    table["type"] = sql_type
 
     # === NEW: store view SQL if available ===
     if row.get("VIEW_DEFINITION"):

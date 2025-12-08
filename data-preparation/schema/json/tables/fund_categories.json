@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.fund_categories",
+  "keywords": "fund funds category categories",
   "query": null,
   "columns": [
     {

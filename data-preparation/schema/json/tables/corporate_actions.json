@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.corporate_actions",
+  "keywords": "corporate corporates action actions",
   "query": null,
   "columns": [
     {

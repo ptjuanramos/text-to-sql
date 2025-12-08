@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.fund_performance_history",
+  "keywords": "fund funds performance performances history histories",
   "query": null,
   "columns": [
     {

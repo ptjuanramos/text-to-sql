@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.benchmark_indices",
+  "keywords": "benchmark benchmarks indice indices",
   "query": null,
   "columns": [
     {

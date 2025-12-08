@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.mutual_funds",
+  "keywords": "mutual mutuals fund funds",
   "query": null,
   "columns": [
     {

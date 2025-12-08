@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.investors",
+  "keywords": "investor investors",
   "query": null,
   "columns": [
     {

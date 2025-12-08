@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-import os, json
+import os, json, re
 from src.utils.embeddings.utils.json_formatted_schema import JsonFormattedSchema
 from src.common.embeddings_generator import EmbeddingGenerator
 from src.common.text_to_sql_ai_search import TextToSqlAISearch
@@ -22,12 +22,15 @@ def read_json_schemas() -> list[JsonFormattedSchema]:
         if schema_json:
             schema_obj = JsonFormattedSchema(
                 schema_type=schema_json.get("type", "unknown"),
-                schema_json=schema_json,
-                sql_schema=""
+                schema_json=schema_json
             )
             schemas.append(schema_obj)
 
     return schemas
+
+def clean_id(name):
+    return re.sub(r'[^a-zA-Z0-9_\-=]', '_', name)
+
 
 if __name__ == "__main__":
     folder_path = "../schema/sql/tables"
@@ -38,10 +41,10 @@ if __name__ == "__main__":
 
     for json_schema in json_schemas:
         doc = {
-            "id": json_schema.schema_json["name"],
+            "id": clean_id(json_schema.schema_json["name"]),
             "type": json_schema.schema_type,
             "name": json_schema.schema_json["name"],
-            "schema_text": json_schema.schema_json, #TODO need to analyze if TOON will perform better.
+            "schema_text": json_schema.get_schema_toon(), #TODO need to analyze if TOON will perform better.
             "embedding": json_schema.get_json_schema_embed()
         }
 
@@ -52,10 +55,9 @@ if __name__ == "__main__":
         assert isinstance(doc["embedding"], list), "Embedding must be a list"
         assert len(doc["embedding"]) == 1536, "Embedding dimension mismatch"
 
-    # text_to_sql_ai_search = TextToSqlAISearch()
-    # text_to_sql_ai_search.create_index_if_not_exists()
-    #
-    # results = text_to_sql_ai_search.save_schema_documents(docs)
-    results = []
+    text_to_sql_ai_search = TextToSqlAISearch()
+    text_to_sql_ai_search.create_index_if_not_exists()
+
+    results = text_to_sql_ai_search.save_schema_documents(docs)
     print(results)
 

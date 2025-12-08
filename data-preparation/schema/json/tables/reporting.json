@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.reporting",
+  "keywords": "reporting reportings",
   "query": null,
   "columns": [
     {

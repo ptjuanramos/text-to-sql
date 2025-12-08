@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.fund_holdings",
+  "keywords": "fund funds holding holdings",
   "query": null,
   "columns": [
     {

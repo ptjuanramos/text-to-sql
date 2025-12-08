@@ -6,14 +6,14 @@ from openai.types.chat import ChatCompletionUserMessageParam
 class TextToSqlCompletion:
     def __init__(self):
         self.client = AzureOpenAI(
-            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-            api_key=os.getenv("AZURE_OPENAI_KEY"),
-            api_version="2024-02-01"
+            azure_endpoint="https://sshya-mim76g3o-eastus2.cognitiveservices.azure.com/",
+            api_key="8bG6sFkFBMVrdtpLBaFGMgvy1PJbHrhsQ6GHjTbKQRitNAKEhgk5JQQJ99BKACHYHv6XJ3w3AAAAACOG2iaY",
+            api_version="2024-12-01-preview"
         )
 
     def get_query(self, prompt: str) -> str:
         response = self.client.chat.completions.create(
-            model="gpt-5-nano",
+            model=os.getenv("AZURE_LLM_DEPLOYMENT_NAME"),
             messages=[
                 ChatCompletionUserMessageParam(role="user", content=prompt)
             ]

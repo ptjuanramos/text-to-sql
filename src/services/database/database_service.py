@@ -10,18 +10,18 @@ DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 DB_PORT = os.getenv("DB_PORT", "1433")
 
-def get_db_connection(db_name, db_user, db_password, db_host, db_port):
+def get_db_connection():
     conn_str = (
         f"DRIVER={{ODBC Driver 18 for SQL Server}};"
-        f"SERVER={db_host},{db_port};DATABASE={db_name};"
-        f"UID={db_user};PWD={db_password};Encrypt=yes;TrustServerCertificate=no;"
+        f"SERVER={DB_HOST},{DB_PORT};DATABASE={DB_NAME};"
+        f"UID={DB_USER};PWD={DB_PASS};Encrypt=no;"
     )
     return pyodbc.connect(conn_str)
 
 class DatabaseService:
 
     def execute_query(self, query):
-        conn = get_db_connection(DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT)
+        conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute(query)
         rows = cursor.fetchall()

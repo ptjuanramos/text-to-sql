@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "VIEW",
   "name": "sys.database_firewall_rules",
+  "keywords": "sy sys database databases firewall firewalls rule rules",
   "query": "CREATE VIEW sys.database_firewall_rules AS SELECT id, name, start_ip_address, end_ip_address, create_date, modify_date FROM sys.database_firewall_rules_table",
   "columns": [
     {

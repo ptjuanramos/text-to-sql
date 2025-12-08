@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.dividends",
+  "keywords": "dividend dividends",
   "query": null,
   "columns": [
     {

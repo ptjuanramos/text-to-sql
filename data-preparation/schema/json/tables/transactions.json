@@ -1,6 +1,7 @@
 {
-  "type": null,
+  "type": "TABLE",
   "name": "dbo.transactions",
+  "keywords": "transaction transactions",
   "query": null,
   "columns": [
     {
