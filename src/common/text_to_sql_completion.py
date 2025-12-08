@@ -6,9 +6,9 @@ from openai.types.chat import ChatCompletionUserMessageParam
 class TextToSqlCompletion:
     def __init__(self):
         self.client = AzureOpenAI(
-            azure_endpoint="https://sshya-mim76g3o-eastus2.cognitiveservices.azure.com/",
-            api_key="8bG6sFkFBMVrdtpLBaFGMgvy1PJbHrhsQ6GHjTbKQRitNAKEhgk5JQQJ99BKACHYHv6XJ3w3AAAAACOG2iaY",
-            api_version="2024-12-01-preview"
+            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+            api_key=os.getenv("AZURE_OPENAI_KEY"),
+            api_version=os.getenv("AZURE_OPENAI_VERSION")
         )
 
     def get_query(self, prompt: str) -> str:
